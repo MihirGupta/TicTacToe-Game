@@ -35,17 +35,6 @@ public class AI_Brain_test {
             ,{9,1,2},{9,3,6},{9,4,7},{9,6,3},{9,7,8},{9,8,7}
             ,{9,2,7}};//62//,{9,2,3}}; will block
     
-    public static int line[][] = {
-                                    {1,2,3},
-                                    {4,5,6},
-                                    {7,8,9},
-                                    {1,4,7},
-                                    {2,5,8},
-                                    {3,6,8},
-                                    {1,5,9},
-                                    {3,5,7}
-                                                };
-    
     
     public static void first_move_dicision() 
     {
@@ -160,7 +149,6 @@ public class AI_Brain_test {
                     block_user(7);
                     return true;
             }
-            
             else if(Application.btn_1.getText()=="o" && Application.btn_4.getText()=="o" && Application.btn_7.getText()=="")
             {
                     block_user(7);
@@ -593,15 +581,6 @@ public class AI_Brain_test {
         else
         {
             return false;
-        }
-    }
-
-    public static void slow()
-    {
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e1) {
-            e1.printStackTrace();
         }
     }
     

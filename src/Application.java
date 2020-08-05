@@ -25,7 +25,7 @@ public class Application {
 	/**
 	 * Launch the application.
 	 */
-	static boolean ans=false;
+	static boolean flag=false; //stops program when match is over
 	static int i=0;;
 	
 	
@@ -224,7 +224,7 @@ public class Application {
 				btn_7.setText("");
 				btn_8.setText("");
 				btn_9.setText("");
-				ans=false;
+				flag=false;
 				i=0;
 			}
 		});
@@ -273,7 +273,7 @@ public class Application {
 		JButton sourceButton = (JButton) e.getSource();
 		String btnText = sourceButton.getText(); 
 		
-		if(ans==false)
+		if(flag==false)
 		{		
 			if(btnText=="")
 			{	
@@ -340,7 +340,7 @@ public class Application {
 		}
 		else 
 		{
-			if(match())
+			if(match_over())
 				message(11);
 			else 
 			{
@@ -496,18 +496,18 @@ public class Application {
 	{
 		if(n==1)
 		{
-		JOptionPane.showMessageDialog(null, "Human wins!!");
-		ans=true;
+			JOptionPane.showMessageDialog(null, "Human wins!!");
+			flag=true;
 		}
 		else if(n==0)
 		{
-		JOptionPane.showMessageDialog(null, "AI wins!!");
-		ans=true;
+			JOptionPane.showMessageDialog(null, "AI wins!!");
+			flag=true;
 		}
 		else if(n==11)
 		{
 			JOptionPane.showMessageDialog(null, "Match Draw");
-			ans=true;
+			flag=true;
 		}	
 	}
 	
@@ -602,6 +602,7 @@ public class Application {
 	{
 		Random generate_random=new Random();
 		int random_num=generate_random.nextInt(9) + 1;
+		
 		if(Application.check_empty(random_num)==true) 
 		{
 			AI_Brain_test.block_user(random_num);
@@ -612,24 +613,22 @@ public class Application {
 			return false;
 		}
 		
-		
 	}
 	
 	
-	public boolean match()
+	public boolean match_over()
 	{
-		int flag=0;
+		int count=0;
 		for(int i=1;i<=9;i++)
 		{
 			if(check_empty(i)==true)
 			{
-				flag++;
+				count++;
 			}
 		}
-		if(flag==0) 
+		if(count==0) 
 		{
-			return true;
-			
+			return true;	
 		}
 		else 
 		{
