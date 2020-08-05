@@ -23,7 +23,7 @@ public class Application {
 	
 	private JFrame frame;
 	/**
-	 * Launch the application.
+	 * Launch the application user interface.
 	 */
 	static boolean flag=false; //stops program when match is over
 	static int i=0;;
